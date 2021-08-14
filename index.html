@@ -2,21 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <section class="fractal-tree">
 
-    <section class="fractal-tree">
-        <div class="wrapper">
-            <canvas class="canvas" width="800px" height="800px"></canvas>
+    <div class="wrapper">
+      <div class="control-panel">
+        <div class="create-tree button">Create tree</div>
+        <h3>Control panel</h3>
+        <div class="control-wrapper">
+          <label class="block"> Iteration count
+            <input type="range" id="iterationCount" min="9" max="27" value="20" step="1">
+          </label>
+          <label class="block"> Trunk height
+            <input type="range" id="trunkHeight" min="20" max="200" value="80" step="1">
+          </label>
+          <label class="block"> Trunk thickness
+            <input type="range" id="trunkThickness" min="1" max="20" value="8" step="0.33">
+          </label>
+          <label class="block"> Branch length ratio
+            <input type="range" id="branchRatio" min="0.5" max="1.1" value="0.85" step="0.05">
+          </label>
+          <label class="block"> Branch length variability
+            <input type="range" id="branchLengthVariability" min="0" max="1" value="0.5" step="0.1">
+          </label>
+          <label class="block"> Branch probability
+            <input type="range" id="branchProbability" min="0.5" max="1" value="0.95" step="0.05">
+          </label>
+          <label class="block"> Leaf probability
+            <input type="range" id="leafProbability">
+          </label>
+          <label class="block"> Base fork angle
+            <input type="range" id="forkAngle" min="0.04" max="2.09" value="0.5" step="0.01">
+          </label>
+          <label class="block"> Fork angle pull
+            <input type="range" id="forkAnglePull" min="0.1" max="2" value="1" step="0.01">
+          </label>
+          <label class="block"> Branch rotation variability
+            <input type="range" id="branchRotationVariability">
+          </label>
+          <label class="block"> Leaf size
+            <input type="range" id="leafSize">
+          </label>
+          <label class="block"> Branch color
+            <input type="range" id="branchColor">
+          </label>
+          <label class="block"> Leaf color
+            <input type="range" id="leafColor">
+          </label>
+          <label class="block"> Leaf color variability
+            <input type="range" id="leafColorVariability">
+          </label>
         </div>
-    </section>
+      </div>
+
+      <canvas class="canvas" width="800px" height="800px"></canvas>
+    </div>
+  </section>
 
 </body>
 

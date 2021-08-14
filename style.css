@@ -5,6 +5,22 @@
     align-items: center;
 }
 
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
 .canvas {
     border: 1px solid black;
 }
