@@ -15,7 +15,7 @@
 
     <div class="wrapper">
       <div class="control-panel">
-        <div class="create-tree button">Create tree</div>
+        <button class="create-tree block">Create tree</button>
         <h3>Control panel</h3>
         <div class="control-wrapper">
           <label class="block"> Iteration count
@@ -30,14 +30,11 @@
           <label class="block"> Branch length ratio
             <input type="range" id="branchRatio" min="0.5" max="1.1" value="0.85" step="0.05">
           </label>
-          <label class="block"> Branch length variability
-            <input type="range" id="branchLengthVariability" min="0" max="1" value="0.5" step="0.1">
+          <label class="block"> Length variability
+            <input type="range" id="branchLengthVariability" min="0" max="1" value="0.2" step="0.1">
           </label>
           <label class="block"> Branch probability
             <input type="range" id="branchProbability" min="0.5" max="1" value="0.95" step="0.05">
-          </label>
-          <label class="block"> Leaf probability
-            <input type="range" id="leafProbability">
           </label>
           <label class="block"> Base fork angle
             <input type="range" id="forkAngle" min="0.04" max="2.09" value="0.5" step="0.01">
@@ -45,20 +42,26 @@
           <label class="block"> Fork angle pull
             <input type="range" id="forkAnglePull" min="0.1" max="2" value="1" step="0.01">
           </label>
-          <label class="block"> Branch rotation variability
-            <input type="range" id="branchRotationVariability">
+          <label class="block"> Rotation variability
+            <input type="range" id="branchRotationVariability" min="0" max="0.1" value="0" step="0.01">
+          </label>
+          <label class="block"> Leaf probability
+            <input type="range" id="leafProbability" min="0" max="1" value="0.1" step="0.025">
           </label>
           <label class="block"> Leaf size
-            <input type="range" id="leafSize">
+            <input type="range" id="leafSize" min="1" max="20" value="6" step="1">
           </label>
           <label class="block"> Branch color
-            <input type="range" id="branchColor">
+            <input type="range" id="branchColor" min="-10" max="90" value="20" step="5">
           </label>
           <label class="block"> Leaf color
-            <input type="range" id="leafColor">
+            <input type="range" id="leafColor" min="0" max="90" value="80" step="5">
+          </label>
+          <label class="block"> Leaf color lightness
+            <input type="range" id="leafLightness" min="0" max="50" value="10" step="5">
           </label>
           <label class="block"> Leaf color variability
-            <input type="range" id="leafColorVariability">
+            <input type="range" id="leafColorVariability" min="0" max="50" value="20" step="5">
           </label>
         </div>
       </div>
