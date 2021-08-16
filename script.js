@@ -1,18 +1,22 @@
 const canvas = document.querySelector(".canvas")
 const ctx = canvas.getContext("2d")
-
+const createTree = document.querySelector(".create-tree")
 const controlWrapper = document.querySelector(".control-wrapper")
 
 let iterationCount, trunkHeight, trunkThickness, branchRatio, branchProbability, leafProbability, branchLengthVariability, forkAngle, forkAnglePull, branchRotationVariability, leafSize, branchColor, leafColor, leafColorVariability, leafLightness
 
 
+
 const timers = []
 
 ctx.lineCap = "round"
+resize()
 updateValues()
 render()
 
-controlWrapper.onchange = () => {
+
+controlWrapper.onchange = createTree.onclick = onresize = () => {
+    resize()
     updateValues()
     timers.forEach(timerId => clearTimeout(timerId))
     timers.splice(0)
@@ -20,6 +24,10 @@ controlWrapper.onchange = () => {
     render()
 }
 
+function resize() {
+    canvas.height = innerHeight
+    canvas.width = innerWidth - 200
+}
 
 function updateValues() {
     ({ iterationCount, trunkHeight, trunkThickness, branchRatio, branchProbability, leafProbability, branchLengthVariability, forkAngle, forkAnglePull, branchRotationVariability, leafSize, branchColor, leafColor, leafColorVariability, leafLightness, } = Object.fromEntries([...controlWrapper.querySelectorAll('[type="range"]')].map(({ id, value }) => [id, +value])))
@@ -95,7 +103,7 @@ function drawTree(x0, y0, angle, length, width, i) {
             drawLeaf(x0, y0, 4 + rnd(2), angle)
         }
         timers.splice(timers.indexOf(timerId), 1)
-    }, i * 10)
+    }, i ** 2 / 4)
     timers.push(timerId)
 }
 
@@ -126,6 +134,7 @@ function drawLeaves(x0, y0, r, angle, length) {
     if (rnd() < leafProbability) drawLeaf(x3, y3, r, angle - 1)
     if (rnd() < leafProbability) drawLeaf(x3, y3, r, angle + 1)
 }
+
 
 function findEnd(beginX, beginY, angle, length) {
     return {
