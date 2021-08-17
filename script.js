@@ -9,7 +9,6 @@ let iterationCount, trunkHeight, trunkThickness, branchRatio, branchProbability,
 
 const timers = []
 
-ctx.lineCap = "round"
 resize()
 updateValues()
 render()
@@ -27,6 +26,7 @@ controlWrapper.onchange = createTree.onclick = onresize = () => {
 function resize() {
     canvas.height = innerHeight
     canvas.width = innerWidth - 200
+    ctx.lineCap = "round"
 }
 
 function updateValues() {
