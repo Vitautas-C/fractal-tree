@@ -15,6 +15,7 @@ render()
 
 
 controlWrapper.onchange = createTree.onclick = onresize = () => {
+    ctx.lineCap = "round"
     resize()
     updateValues()
     timers.forEach(timerId => clearTimeout(timerId))
